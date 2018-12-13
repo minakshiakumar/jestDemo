@@ -1,0 +1,25 @@
+{
+    "testRegex": "((\\.|/*.)(snapshot))\\.js?$",
+    "rootDir": "..",
+    "transform": {
+        "\\.m?js$": "esm",
+        ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
+    },
+    "transformIgnorePatterns": [
+        "/node_modules/(?!${esModules})",
+        "\\.(gif|ttf|eot|svg)$"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+        "src/**/*.{js,jsx}"
+    ],
+    "coverageDirectory": "/coverage/",
+    "coveragePathIgnorePatterns": [
+        "/build/",
+        "/node_modules/"
+    ],
+    "moduleNameMapper":{
+        "\\.(css|less|sass|scss)$": "__mocks__/styleMock.js",
+        "\\.(gif|ttf|eot|svg)$": "<rootDir>/src/logo.svg"
+   }
+}
